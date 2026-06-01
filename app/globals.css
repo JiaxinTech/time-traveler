@@ -323,10 +323,30 @@ section {
   background: var(--white);
 }
 
+.spot-card-featured {
+  border-color: rgba(216, 169, 77, .82);
+  box-shadow: 0 20px 52px rgba(216, 169, 77, .22);
+}
+
 .spot-card figure {
+  position: relative;
   height: 240px;
   margin: 0;
   background: var(--sky);
+}
+
+.spot-card figcaption {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: var(--moss-dark);
+  background: var(--gold);
+  box-shadow: 0 10px 24px rgba(24, 34, 32, .2);
+  font-size: 13px;
+  font-weight: 900;
 }
 
 .spot-card div {
@@ -358,6 +378,11 @@ section {
   background: #edf2ec;
   font-size: 12px;
   font-weight: 800;
+}
+
+.spot-card-featured .badge:first-child {
+  color: var(--white);
+  background: var(--maple);
 }
 
 .food-layout {
