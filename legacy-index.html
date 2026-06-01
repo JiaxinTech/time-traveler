@@ -476,6 +476,21 @@
       color: var(--muted);
     }
 
+    td strong,
+    td span {
+      display: block;
+    }
+
+    td strong {
+      margin-bottom: 4px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    td span {
+      line-height: 1.55;
+    }
+
     .note {
       display: flex;
       flex-direction: column;
@@ -829,23 +844,43 @@
         <table aria-label="京都三日人均预算">
           <tr>
             <th>住宿</th>
-            <td>¥24,000 - ¥42,000 / 3 晚</td>
+            <td><strong>¥24,000 - ¥42,000</strong><span>3 晚商务酒店或设计型民宿，按京都站、四条河原町、乌丸御池周边单人分摊估算。</span></td>
           </tr>
           <tr>
-            <th>餐饮</th>
-            <td>¥12,000 - ¥20,000 / 3 天</td>
+            <th>早餐</th>
+            <td><strong>¥1,800 - ¥3,600</strong><span>便利店、咖啡店或酒店简餐，约 ¥600 - ¥1,200 / 天。</span></td>
+          </tr>
+          <tr>
+            <th>午餐</th>
+            <td><strong>¥3,000 - ¥6,000</strong><span>拉面、荞麦面、豆腐定食、亲子丼等，约 ¥1,000 - ¥2,000 / 餐。</span></td>
+          </tr>
+          <tr>
+            <th>晚餐</th>
+            <td><strong>¥6,000 - ¥12,000</strong><span>居酒屋、鳗鱼饭、京料理简餐或先斗町普通餐厅，约 ¥2,000 - ¥4,000 / 餐。</span></td>
+          </tr>
+          <tr>
+            <th>茶点与小吃</th>
+            <td><strong>¥1,800 - ¥4,500</strong><span>抹茶甜品、团子、咖啡、便利店饮料和路上补给。</span></td>
           </tr>
           <tr>
             <th>市内交通</th>
-            <td>¥2,500 - ¥4,500</td>
+            <td><strong>¥2,500 - ¥4,500</strong><span>JR、地铁、阪急、京阪、巴士和少量打车补差；跨区优先轨道交通。</span></td>
           </tr>
           <tr>
-            <th>门票与体验</th>
-            <td>¥3,000 - ¥8,000</td>
+            <th>门票参拜</th>
+            <td><strong>¥2,000 - ¥4,500</strong><span>清水寺、天龙寺庭园、二条城、寺院庭园等常规门票。</span></td>
+          </tr>
+          <tr>
+            <th>体验预约</th>
+            <td><strong>¥2,000 - ¥8,000</strong><span>和服租赁、茶道、篩月精进料理加价或川床座位等可选项目。</span></td>
+          </tr>
+          <tr>
+            <th>伴手礼与应急</th>
+            <td><strong>¥3,000 - ¥8,000</strong><span>药妆、小包装点心、御守、寄存柜、雨具或临时加餐。</span></td>
           </tr>
           <tr>
             <th>总计</th>
-            <td>约 ¥41,500 - ¥74,500 / 人</td>
+            <td><strong>约 ¥46,100 - ¥93,100 / 人</strong><span>偏省钱可压到 ¥45,000 左右；旺季住宿、川床料理或高端体验会明显上浮。</span></td>
           </tr>
         </table>
         <aside class="note">

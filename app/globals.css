@@ -492,6 +492,21 @@ td {
   color: var(--muted);
 }
 
+td strong,
+td span {
+  display: block;
+}
+
+td strong {
+  margin-bottom: 4px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+td span {
+  line-height: 1.55;
+}
+
 .note {
   display: flex;
   flex-direction: column;
