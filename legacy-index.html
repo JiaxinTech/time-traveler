@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>京都三日旅行攻略</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182220;
+      --muted: #5f6b67;
+      --paper: #fbfaf6;
+      --line: #ded9cf;
+      --moss: #47665a;
+      --moss-dark: #243d35;
+      --maple: #b94f35;
+      --gold: #d8a94d;
+      --sky: #dce9e6;
+      --white: #fffefd;
+      --shadow: 0 18px 48px rgba(24, 34, 32, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 14px clamp(18px, 5vw, 72px);
+      border-bottom: 1px solid rgba(222, 217, 207, .72);
+      background: rgba(251, 250, 246, .88);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--maple);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--maple);
+    }
+
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(24, 34, 32, .10) 0%, rgba(24, 34, 32, .36) 48%, rgba(24, 34, 32, .72) 100%),
+        url("https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=2400&q=82") center 42% / cover;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 110px;
+      background: linear-gradient(180deg, rgba(251, 250, 246, 0), var(--paper));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 36px));
+      margin: 0 auto;
+      padding: 0 0 84px;
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid rgba(255, 254, 253, .36);
+      border-radius: 999px;
+      background: rgba(255, 254, 253, .12);
+      backdrop-filter: blur(8px);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    h1 {
+      max-width: 780px;
+      margin: 20px 0 18px;
+      font-size: clamp(46px, 9vw, 108px);
+      line-height: .95;
+      letter-spacing: 0;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(17px, 2vw, 22px);
+      color: rgba(255, 254, 253, .88);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .button.primary {
+      color: var(--moss-dark);
+      background: var(--white);
+    }
+
+    .button.secondary {
+      color: var(--white);
+      border-color: rgba(255, 254, 253, .38);
+      background: rgba(255, 254, 253, .12);
+    }
+
+    main {
+      width: min(1120px, calc(100% - 36px));
+      margin: -34px auto 80px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .quick-panel {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .quick-item {
+      min-height: 118px;
+      padding: 22px;
+      background: var(--white);
+    }
+
+    .quick-item strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+
+    .quick-item span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    section {
+      padding: 74px 0 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.08;
+    }
+
+    .section-head p {
+      max-width: 470px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .route {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .day {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      min-height: 220px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .day-tag {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 18px 14px;
+      color: var(--white);
+      background: var(--moss);
+      font-weight: 800;
+    }
+
+    .day-tag small {
+      color: rgba(255, 254, 253, .72);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .day-body {
+      padding: 22px;
+    }
+
+    .day-body h3 {
+      margin: 0 0 12px;
+      font-size: 22px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline li {
+      display: grid;
+      grid-template-columns: 68px 1fr;
+      gap: 14px;
+      align-items: start;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .timeline time {
+      color: var(--maple);
+      font-weight: 800;
+    }
+
+    .route-note {
+      display: block;
+      margin-top: 4px;
+      color: #7a6551;
+      font-size: 13px;
+    }
+
+    .spot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .spot-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .spot-card figure {
+      height: 240px;
+      margin: 0;
+      background: var(--sky);
+    }
+
+    .spot-card div {
+      padding: 20px;
+    }
+
+    .spot-card h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .spot-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .badge {
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--moss-dark);
+      background: #edf2ec;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .food-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, .82fr) 1.18fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .food-photo {
+      min-height: 500px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: var(--sky);
+    }
+
+    .food-list {
+      display: grid;
+      gap: 14px;
+      align-content: center;
+    }
+
+    .food-item {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 16px;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .food-icon {
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--maple);
+      font-size: 24px;
+    }
+
+    .food-item h3 {
+      margin: 0 0 4px;
+      font-size: 18px;
+    }
+
+    .food-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .tip {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    .tip h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+    }
+
+    .tip p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .budget {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--white);
+    }
+
+    th,
+    td {
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line);
+      text-align: left;
+      font-size: 14px;
+    }
+
+    tr:last-child th,
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    th {
+      width: 42%;
+      color: var(--moss-dark);
+    }
+
+    td {
+      color: var(--muted);
+    }
+
+    .note {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 28px;
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--moss-dark);
+    }
+
+    .note h3 {
+      margin: 0 0 12px;
+      font-size: 26px;
+    }
+
+    .note p {
+      margin: 0;
+      color: rgba(255, 254, 253, .78);
+    }
+
+    footer {
+      margin-top: 72px;
+      padding: 30px 0 54px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .quick-panel,
+      .route,
+      .spot-grid,
+      .food-layout,
+      .tips,
+      .budget {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-panel {
+        margin-top: 8px;
+      }
+
+      .day {
+        grid-template-columns: 78px 1fr;
+      }
+
+      .food-photo {
+        min-height: 340px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .topbar {
+        padding-inline: 16px;
+      }
+
+      .hero {
+        min-height: 86vh;
+      }
+
+      .hero-inner {
+        width: min(100% - 28px, 1120px);
+        padding-bottom: 64px;
+      }
+
+      main {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .quick-item,
+      .day-body,
+      .tip,
+      .note {
+        padding: 18px;
+      }
+
+      .day {
+        grid-template-columns: 1fr;
+      }
+
+      .day-tag {
+        min-height: 72px;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .timeline li {
+        grid-template-columns: 58px 1fr;
+      }
+
+      .spot-card figure {
+        height: 210px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="京都三日旅行攻略首页">
+      <span class="brand-mark">京</span>
+      <span>Kyoto 3 Days</span>
+    </a>
+    <nav aria-label="页面导航">
+      <a href="#route">路线</a>
+      <a href="#spots">景点</a>
+      <a href="#food">美食</a>
+      <a href="#tips">贴士</a>
+      <a href="#budget">预算</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="top" aria-label="京都旅行封面">
+    <div class="hero-inner">
+      <span class="eyebrow">春秋皆宜 · 首次到访友好 · 公共交通为主</span>
+      <h1>京都三日旅行攻略</h1>
+      <p class="hero-copy">把清水寺、伏见稻荷、岚山竹林和锦市场串成轻松路线：早晨看城市醒来，午后留给茶屋与小巷，晚上慢慢走回鸭川。</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#route">查看行程</a>
+        <a class="button secondary" href="#budget">估算预算</a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="quick-panel" aria-label="旅行概览">
+      <div class="quick-item">
+        <strong>3 天</strong>
+        <span>覆盖东山、伏见、岚山、市中心四个核心区域。</span>
+      </div>
+      <div class="quick-item">
+        <strong>35k 步</strong>
+        <span>建议穿好走的鞋，行李尽量寄存在酒店或车站。</span>
+      </div>
+      <div class="quick-item">
+        <strong>¥55k</strong>
+        <span>中等舒适度人均参考，不含往返机票。</span>
+      </div>
+      <div class="quick-item">
+        <strong>7:30</strong>
+        <span>热门景点尽量早到，体验会安静很多。</span>
+      </div>
+    </div>
+
+    <section id="route">
+      <div class="section-head">
+        <h2>三日路线</h2>
+        <p>按地理位置减少折返，保留茶歇和临时绕路的空间。每一天都可以从京都站或四条河原町出发。</p>
+      </div>
+      <div class="route">
+        <article class="day">
+          <div class="day-tag">
+            <span>Day 1</span>
+            <small>东山</small>
+          </div>
+          <div class="day-body">
+            <h3>清水寺与祇园散步</h3>
+            <ul class="timeline">
+              <li><time>08:00</time><span><strong>清水寺主线游览</strong>仁王门入场，先拍三重塔，再去本堂舞台和奥之院回望舞台，最后绕到音羽瀑布。<span class="route-note">建议 90-120 分钟，清晨进、顺坡下山。</span></span></li>
+              <li><time>10:15</time><span><strong>三年坂、二年坂吃甜点</strong>从清水坂下行，去 MACCHA HOUSE 清水三宁坂店点宇治抹茶提拉米苏或抹茶芭菲；想买伴手礼可看京ばあむ清水店的抹茶豆乳年轮蛋糕。<span class="route-note">边走边吃不礼貌，买完在店内或指定区域吃。</span></span></li>
+              <li><time>13:30</time><span><strong>高台寺、石塀小路、八坂神社</strong>午后从宁宁之道进高台寺庭园，出来钻石塀小路，最后到八坂神社西楼门。<span class="route-note">这段小巷适合慢拍照，避开居民门口停留。</span></span></li>
+              <li><time>18:00</time><span><strong>祇园晚餐和鸭川散步</strong>花见小路只走主街和巷口，晚餐去先斗町选居酒屋或京料理；预算友好可在河原町附近吃鳗鱼饭、亲子丼或拉面。<span class="route-note">饭后从四条大桥沿鸭川走到三条，夜景最好。</span></span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-tag">
+            <span>Day 2</span>
+            <small>伏见</small>
+          </div>
+          <div class="day-body">
+            <h3>千本鸟居与锦市场</h3>
+            <ul class="timeline">
+              <li><time>07:30</time><span><strong>伏见稻荷半山路线</strong>JR 稻荷站出站，按楼门、本殿、千本鸟居、奥社奉拜所走；体力够继续到熊鹰社和四辻观景点再折返。<span class="route-note">到四辻往返约 2.5-3 小时，完整绕山另留时间。</span></span></li>
+              <li><time>11:45</time><span><strong>锦市场边逛边吃</strong>从高仓通西侧进，先吃こんなもんじゃ的豆乳甜甜圈，再到三木鸡卵或锦平野吃出汁玉子烧，穿插试京渍物、豆皮和海鲜串。<span class="route-note">市场通道窄，买到的东西在店前吃完再走。</span></span></li>
+              <li><time>15:00</time><span><strong>寺町通、新京极补咖啡和杂货</strong>从锦天满宫出来接寺町通，逛鸠居堂纸品、药妆和中古杂货；想坐下来可去六曜社或 % Arabica 京都藤井大丸附近店喝咖啡。<span class="route-note">把购物放这段，晚上不用拎着走景点。</span></span></li>
+              <li><time>19:00</time><span><strong>先斗町订位晚餐</strong>想吃河景选有川床席的店，想轻松就找烤鸟、炸串或关东煮；点单可选京野菜天妇罗、鸭肉、豆腐料理和一杯当地清酒。<span class="route-note">热门店提前订，不订就 17:30 前去排第一轮。</span></span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-tag">
+            <span>Day 3</span>
+            <small>岚山</small>
+          </div>
+          <div class="day-body">
+            <h3>竹林、渡月桥与庭园</h3>
+            <ul class="timeline">
+              <li><time>08:00</time><span><strong>竹林小径反向切入</strong>JR 嵯峨岚山站下车，先走野宫神社、竹林小径，避开渡月桥方向涌来的人流。<span class="route-note">竹林主段不长，重点是早到和少停在路中央。</span></span></li>
+              <li><time>09:15</time><span><strong>天龙寺庭园</strong>从北门附近进天龙寺，绕曹源池看借景庭园，再从正门回到岚山主街。<span class="route-note">想更顺也可先正门进、北门出，直接接竹林。</span></span></li>
+              <li><time>12:00</time><span><strong>午餐吃豆腐或精进料理</strong>预算稳妥选湯豆腐嵯峨野点汤豆腐定食；想把体验拉满，提前预约天龙寺直营「篩月」精进料理。<span class="route-note">篩月常需预约，并另付庭园参拜料。</span></span></li>
+              <li><time>15:00</time><span><strong>渡月桥、保津川、咖啡收尾</strong>过渡月桥看河面和岚山山色，回桥北在 Arabica Kyoto Arashiyama 买咖啡，傍晚从岚电岚山或 JR 嵯峨岚山返程。<span class="route-note">樱花、红叶季给车站排队多留 20 分钟。</span></span></li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="day">
+          <div class="day-tag">
+            <span>Plus</span>
+            <small>加选</small>
+          </div>
+          <div class="day-body">
+            <h3>有余力时这样加</h3>
+            <ul class="timeline">
+              <li><time>半天</time><span><strong>金阁寺、龙安寺、北野天满宫</strong>按金阁寺拍倒影、龙安寺看石庭、北野天满宫喝茶的顺序走，适合第三天不去岚山时替换。</span></li>
+              <li><time>雨天</time><span><strong>博物馆和商场线</strong>京都国立博物馆配三十三间堂，下午回京都站 The Cube、Porta 地下街买伴手礼。</span></li>
+              <li><time>夜间</time><span><strong>白川南通夜散步</strong>从祇园白川走到巽桥，再沿花见小路外围回四条；八坂塔周边适合拍夜景但要安静通行。</span></li>
+              <li><time>慢游</time><span><strong>拆分 Day 2</strong>伏见稻荷上午独立成半日，锦市场、寺町和先斗町放下午晚上，脚会舒服很多。</span></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="spots">
+      <div class="section-head">
+        <h2>必去景点</h2>
+        <p>这些点兼具辨识度、交通便利和第一次来京都的满足感。热门时段会拥挤，尽量把核心景点放在上午。</p>
+      </div>
+      <div class="spot-grid">
+        <article class="spot-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1545569341-9eb8b30979d9?auto=format&fit=crop&w=1200&q=80" alt="伏见稻荷大社朱红色鸟居">
+          </figure>
+          <div>
+            <h3>伏见稻荷大社</h3>
+            <p>楼门、本殿、千本鸟居、奥社奉拜所是轻量路线；继续到熊鹰社、四辻能看到京都市区，往返约 2.5-3 小时。拍照不要堵在鸟居正中，往上走人会明显变少。</p>
+            <div class="badge-row">
+              <span class="badge">早到优先</span>
+              <span class="badge">JR 稻荷站</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="spot-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1578469645742-46cae010e5d4?auto=format&fit=crop&w=1200&q=80" alt="岚山竹林小径">
+          </figure>
+          <div>
+            <h3>岚山竹林</h3>
+            <p>建议“JR 嵯峨岚山站、野宫神社、竹林、天龙寺北门、曹源池、渡月桥”串联。竹林本身很短，真正值得留时间的是天龙寺庭园和桥边河景。</p>
+            <div class="badge-row">
+              <span class="badge">半日路线</span>
+              <span class="badge">西北方向</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="spot-card">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1200&q=80" alt="京都东山传统街道">
+          </figure>
+          <div>
+            <h3>东山街区</h3>
+            <p>按“清水寺、三年坂、二年坂、八坂塔、宁宁之道、高台寺、八坂神社、花见小路”下坡走最顺。一路店多，但小巷窄，适合少买多看。</p>
+            <div class="badge-row">
+              <span class="badge">步行友好</span>
+              <span class="badge">茶屋多</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="food">
+      <div class="section-head">
+        <h2>吃什么</h2>
+        <p>京都的好吃不只在高级怀石，也在市场、茶屋和街角小店。午餐排队少一点，晚餐热门店建议提前订。</p>
+      </div>
+      <div class="food-layout">
+        <div class="food-photo">
+          <img src="assets/kyoto-food.png" alt="京都窗边餐桌上的汤豆腐、抹茶甜点、玉子烧和烤串">
+        </div>
+        <div class="food-list">
+          <article class="food-item">
+            <div class="food-icon">茶</div>
+            <div>
+              <h3>抹茶甜点</h3>
+              <p>东山去 MACCHA HOUSE 清水三宁坂店点宇治抹茶提拉米苏、抹茶芭菲；想买伴手礼就选京ばあむ的抹茶豆乳年轮蛋糕。下午茶时段比饭点更舒服。</p>
+            </div>
+          </article>
+          <article class="food-item">
+            <div class="food-icon">豆</div>
+            <div>
+              <h3>汤豆腐</h3>
+              <p>岚山选湯豆腐嵯峨野的汤豆腐定食，或提前预约天龙寺「篩月」吃精进料理。口味清淡，适合放在竹林和渡月桥之间。</p>
+            </div>
+          </article>
+          <article class="food-item">
+            <div class="food-icon">市</div>
+            <div>
+              <h3>锦市场小吃</h3>
+              <p>按豆乳甜甜圈、出汁玉子烧、豆皮、京渍物、海鲜串的顺序少量多样。可认准こんなもんじゃ、三木鸡卵、锦平野、有次刀具等老铺。</p>
+            </div>
+          </article>
+          <article class="food-item">
+            <div class="food-icon">夜</div>
+            <div>
+              <h3>先斗町晚餐</h3>
+              <p>预算从居酒屋到川床料理差异很大。点京野菜天妇罗、鸭肉、豆腐料理、烤鸟或关东煮最不容易踩雷，河边座位要更早预订。</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tips">
+      <div class="section-head">
+        <h2>实用贴士</h2>
+        <p>京都最影响体验的是人流与交通。把热门点前置，把跨区移动放在中午或下午，整趟会轻松很多。</p>
+      </div>
+      <div class="tips">
+        <article class="tip">
+          <h3>住哪里</h3>
+          <p>首次到访推荐京都站、四条河原町、乌丸御池。前者换乘方便，后两者吃饭和夜间散步更方便。</p>
+        </article>
+        <article class="tip">
+          <h3>怎么移动</h3>
+          <p>地铁、JR、阪急和步行组合最稳。巴士覆盖广，但旺季可能拥挤，跨区尽量用轨道交通。</p>
+        </article>
+        <article class="tip">
+          <h3>避开人潮</h3>
+          <p>伏见稻荷、清水寺、岚山竹林尽量 8 点前后到。锦市场午前或下午晚些逛会更舒服。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="budget">
+      <div class="section-head">
+        <h2>预算参考</h2>
+        <p>按 2026 年常见旅行消费做的中等档估算，实际价格会随汇率、季节和住宿位置变化。</p>
+      </div>
+      <div class="budget">
+        <table aria-label="京都三日人均预算">
+          <tr>
+            <th>住宿</th>
+            <td>¥24,000 - ¥42,000 / 3 晚</td>
+          </tr>
+          <tr>
+            <th>餐饮</th>
+            <td>¥12,000 - ¥20,000 / 3 天</td>
+          </tr>
+          <tr>
+            <th>市内交通</th>
+            <td>¥2,500 - ¥4,500</td>
+          </tr>
+          <tr>
+            <th>门票与体验</th>
+            <td>¥3,000 - ¥8,000</td>
+          </tr>
+          <tr>
+            <th>总计</th>
+            <td>约 ¥41,500 - ¥74,500 / 人</td>
+          </tr>
+        </table>
+        <aside class="note">
+          <h3>轻装慢走，是京都的省心秘诀。</h3>
+          <p>不要把一天塞满六七个景点。京都的记忆通常来自路上的小庭院、便利店热茶、傍晚鸭川的风，而不是清单被全部划掉。</p>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      内容参考京都官方旅游指南、JNTO 日本国家旅游局景点介绍、伏见稻荷大社与天龙寺官方资料，以及部分店铺公开菜单。出行前请再次确认营业时间、门票和交通状态。
+    </footer>
+  </main>
+</body>
+</html>
