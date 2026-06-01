@@ -173,7 +173,8 @@ const spots = [
     image: "https://images.unsplash.com/photo-1578469645742-46cae010e5d4?auto=format&fit=crop&w=1200&q=80",
     alt: "岚山竹林小径",
     text: "建议“JR 嵯峨岚山站、野宫神社、竹林、天龙寺北门、曹源池、渡月桥”串联。竹林本身很短，真正值得留时间的是天龙寺庭园和桥边河景。",
-    badges: ["半日路线", "西北方向"]
+    badges: ["最推荐", "半日路线", "西北方向"],
+    featured: true
   },
   {
     title: "东山街区",
@@ -336,8 +337,9 @@ function SpotsSection() {
       />
       <div className="spot-grid">
         {spots.map((spot) => (
-          <article className="spot-card" key={spot.title}>
+          <article className={spot.featured ? "spot-card spot-card-featured" : "spot-card"} key={spot.title}>
             <figure>
+              {spot.featured ? <figcaption>最推荐</figcaption> : null}
               <img src={spot.image} alt={spot.alt} />
             </figure>
             <div>
