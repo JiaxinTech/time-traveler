@@ -191,15 +191,15 @@ const foods = [
     image: "https://images.unsplash.com/photo-1763469026807-5691623dba0a?auto=format&fit=crop&w=900&q=80",
     imagePosition: "50% 55%",
     alt: "绿色抹茶甜点",
-    text: "东山去 MACCHA HOUSE 清水三宁坂店点宇治抹茶提拉米苏、抹茶芭菲；想买伴手礼就选京ばあむ的抹茶豆乳年轮蛋糕。下午茶时段比饭点更舒服。"
+    text: "东山适合点抹茶提拉米苏、抹茶芭菲、茶团子和蕨饼；想买伴手礼可选抹茶年轮蛋糕或茶叶饼干。下午茶时段比饭点更舒服。"
   },
   {
     icon: "豆",
-    title: "汤豆腐",
+    title: "汤豆腐与精进料理",
     image: "https://images.unsplash.com/photo-1763470260582-894ae15f43bb?auto=format&fit=crop&w=900&q=80",
     imagePosition: "45% 42%",
     alt: "盛有豆腐和海带的日式汤碗",
-    text: "岚山选湯豆腐嵯峨野的汤豆腐定食，或提前预约天龙寺「篩月」吃精进料理。口味清淡，适合放在竹林和渡月桥之间。"
+    text: "岚山、南禅寺一带都适合吃汤豆腐定食，也可以提前预约寺院精进料理。口味清淡，适合放在竹林、庭园、渡月桥之间。"
   },
   {
     icon: "市",
@@ -210,12 +210,44 @@ const foods = [
     text: "按豆乳甜甜圈、出汁玉子烧、豆皮、京渍物、海鲜串的顺序少量多样。可认准こんなもんじゃ、三木鸡卵、锦平野、有次刀具等老铺。"
   },
   {
+    icon: "菜",
+    title: "京家常小菜",
+    image: "/assets/kyoto-food.png",
+    imagePosition: "48% 48%",
+    alt: "摆盘精致的日式家常小菜",
+    text: "想吃得不累就找 obanzai 京家常菜，点茄子田乐、南瓜炊合、出汁卷、京渍物和烤鱼。适合午餐定食，也适合晚餐配清酒。"
+  },
+  {
+    icon: "叶",
+    title: "豆皮与京野菜",
+    image: "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?auto=format&fit=crop&w=900&q=80",
+    imagePosition: "50% 50%",
+    alt: "日式豆皮料理和蔬菜",
+    text: "豆皮刺身、豆皮丼、京野菜天妇罗、贺茂茄子和万愿寺辣椒都很有京都感。比怀石轻松，适合安排在祇园或河原町附近。"
+  },
+  {
+    icon: "面",
+    title: "荞麦面与鲱鱼荞麦",
+    image: "https://images.unsplash.com/photo-1612929633738-8fe44f7ec841?auto=format&fit=crop&w=900&q=80",
+    imagePosition: "50% 52%",
+    alt: "一碗热荞麦面",
+    text: "赶路时选冷荞麦、天妇罗荞麦或京都常见的鲱鱼荞麦面。清爽、出餐快，适合夹在寺社参观之间当午餐。"
+  },
+  {
     icon: "夜",
     title: "先斗町晚餐",
     image: "https://images.unsplash.com/photo-1750950388590-1d076dd81f88?auto=format&fit=crop&w=900&q=80",
     imagePosition: "50% 52%",
     alt: "夜晚亮灯的京都日式餐馆",
-    text: "预算从居酒屋到川床料理差异很大。点京野菜天妇罗、鸭肉、豆腐料理、烤鸟或关东煮最不容易踩雷，河边座位要更早预订。"
+    text: "预算从居酒屋到川床料理差异很大。点京野菜天妇罗、鸭肉、豆腐料理、烤鸟、炸串或关东煮最稳，河边座位要更早预订。"
+  },
+  {
+    icon: "拉",
+    title: "京都站拉面与丼饭",
+    image: "https://images.unsplash.com/photo-1557872943-16a5ac26437e?auto=format&fit=crop&w=900&q=80",
+    imagePosition: "50% 48%",
+    alt: "热气腾腾的日式拉面",
+    text: "预算友好或晚归时，京都站、河原町周边选拉面、亲子丼、鳗鱼饭、咖喱饭最省心。适合不想订位、想快速吃饱的一餐。"
   }
 ];
 
